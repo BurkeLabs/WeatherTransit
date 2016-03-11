@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gIq-gH-oRf">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Emergency Closing-->
+        <scene sceneID="F7G-MP-ASB">
+            <objects>
+                <viewController extendedLayoutIncludesOpaqueBars="YES" id="y3D-w8-f3Y" customClass="ECCViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="grm-Mq-7Xr"/>
+                        <viewControllerLayoutGuide type="bottom" id="TqN-di-WP7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="btP-Mg-NiN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="8Ta-gU-qiZ">
+                                <rect key="frame" x="349" y="28" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="lgd-yu-KKJ"/>
+                                    <constraint firstAttribute="width" constant="20" id="slw-Zl-qKu"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="lgd-yu-KKJ"/>
+                                    </mask>
+                                </variation>
+                            </activityIndicatorView>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BG3-CF-gDZ">
+                                <rect key="frame" x="-4" y="20" width="383" height="598"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="BG3-CF-gDZ" secondAttribute="trailing" constant="-20" id="UN6-bc-d6d"/>
+                            <constraint firstItem="8Ta-gU-qiZ" firstAttribute="trailing" secondItem="btP-Mg-NiN" secondAttribute="trailingMargin" constant="10" id="blf-vI-5l4"/>
+                            <constraint firstItem="8Ta-gU-qiZ" firstAttribute="top" secondItem="grm-Mq-7Xr" secondAttribute="bottom" constant="8" symbolic="YES" id="cHf-XP-X0n"/>
+                            <constraint firstItem="BG3-CF-gDZ" firstAttribute="bottom" secondItem="btP-Mg-NiN" secondAttribute="bottomMargin" constant="-49" id="dVT-hc-wqY"/>
+                            <constraint firstItem="BG3-CF-gDZ" firstAttribute="leading" secondItem="btP-Mg-NiN" secondAttribute="leadingMargin" constant="-20" id="nDh-R1-aJL"/>
+                            <constraint firstItem="BG3-CF-gDZ" firstAttribute="top" secondItem="grm-Mq-7Xr" secondAttribute="bottom" id="nvk-A6-dwL"/>
+                            <constraint firstItem="8Ta-gU-qiZ" firstAttribute="top" secondItem="grm-Mq-7Xr" secondAttribute="bottom" constant="29" id="yVI-Z5-VHQ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="yVI-Z5-VHQ"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Emergency Closing" image="embassy" id="evb-VB-r1S"/>
+                    <connections>
+                        <outlet property="pinchGesture" destination="Itz-ue-3vI" id="F7j-sf-3oM"/>
+                        <outlet property="spinner" destination="8Ta-gU-qiZ" id="wnI-PJ-opg"/>
+                        <outlet property="webView" destination="BG3-CF-gDZ" id="eTV-rE-45N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wch-i6-hSm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="Itz-ue-3vI"/>
+            </objects>
+            <point key="canvasLocation" x="-1763.5" y="649.5"/>
+        </scene>
+        <!--Weather-->
+        <scene sceneID="pyJ-aO-hqR">
+            <objects>
+                <viewController id="BLc-vD-kJw" customClass="WeatherViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xz8-Nf-Prm"/>
+                        <viewControllerLayoutGuide type="bottom" id="nSz-mP-qtB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="B9M-kZ-AjY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Rx-qb-wkA">
+                                <rect key="frame" x="-4" y="20" width="383" height="598"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="J4w-hV-W2U">
+                                <rect key="frame" x="335" y="28" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nSz-mP-qtB" firstAttribute="top" secondItem="7Rx-qb-wkA" secondAttribute="bottom" id="RIj-zA-czi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7Rx-qb-wkA" secondAttribute="trailing" constant="-20" id="afp-xz-UE9"/>
+                            <constraint firstItem="7Rx-qb-wkA" firstAttribute="leading" secondItem="B9M-kZ-AjY" secondAttribute="leadingMargin" constant="-20" id="iEC-Ly-6g1"/>
+                            <constraint firstItem="7Rx-qb-wkA" firstAttribute="top" secondItem="Xz8-Nf-Prm" secondAttribute="bottom" id="tnN-2u-qau"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Weather" image="torrential_rain" id="S68-l8-Fok"/>
+                    <connections>
+                        <outlet property="spinner" destination="J4w-hV-W2U" id="KXw-So-P29"/>
+                        <outlet property="webView" destination="7Rx-qb-wkA" id="hOD-hU-fnL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0J0-su-P0q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2305.5" y="649.5"/>
+        </scene>
+        <!--CTA Status-->
+        <scene sceneID="vpO-BO-bbP">
+            <objects>
+                <viewController id="PZA-sx-gTw" customClass="CTAStatusViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="43s-H8-IC1"/>
+                        <viewControllerLayoutGuide type="bottom" id="qtw-Sj-97K"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8BU-Df-MwX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hq1-Rh-Urr">
+                                <rect key="frame" x="-4" y="28" width="383" height="590"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ctaStatus" id="a8u-yZ-Z6Y">
+                                        <rect key="frame" x="0.0" y="28" width="383" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a8u-yZ-Z6Y" id="77b-UW-tfj">
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="PZA-sx-gTw" id="3uo-ys-BYN"/>
+                                    <outlet property="delegate" destination="PZA-sx-gTw" id="pz5-lw-1ph"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qtw-Sj-97K" firstAttribute="top" secondItem="hq1-Rh-Urr" secondAttribute="bottom" id="6hl-MF-P4q"/>
+                            <constraint firstItem="hq1-Rh-Urr" firstAttribute="leading" secondItem="8BU-Df-MwX" secondAttribute="leadingMargin" constant="-20" id="BtZ-7M-Lhg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hq1-Rh-Urr" secondAttribute="trailing" constant="-20" id="M5F-AE-zLQ"/>
+                            <constraint firstItem="hq1-Rh-Urr" firstAttribute="top" secondItem="43s-H8-IC1" secondAttribute="bottom" constant="8" id="j9D-LH-PX4"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="CTA Status" image="dashboard" id="pTW-OH-x9m"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NXa-9J-8es" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1443.5" y="-77.5"/>
+        </scene>
+        <!--Bus Tracker-->
+        <scene sceneID="HUq-jD-abM">
+            <objects>
+                <viewController id="3PC-wn-rY5" customClass="BusTrackerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CIp-ui-d8H"/>
+                        <viewControllerLayoutGuide type="bottom" id="1bA-YQ-hwJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="htx-OO-jyw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bcb-uA-gR2">
+                                <rect key="frame" x="-4" y="28" width="383" height="590"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="busTracker" id="cRm-6K-Owx">
+                                        <rect key="frame" x="0.0" y="28" width="383" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cRm-6K-Owx" id="cbf-el-os9">
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="3PC-wn-rY5" id="dsk-sW-SaQ"/>
+                                    <outlet property="delegate" destination="3PC-wn-rY5" id="cfe-aL-cqo"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bcb-uA-gR2" firstAttribute="leading" secondItem="htx-OO-jyw" secondAttribute="leadingMargin" constant="-20" id="HIu-5c-ML5"/>
+                            <constraint firstItem="bcb-uA-gR2" firstAttribute="top" secondItem="CIp-ui-d8H" secondAttribute="bottom" constant="8" id="PL0-Pd-bd6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bcb-uA-gR2" secondAttribute="trailing" constant="-20" id="RMh-S4-MQ3"/>
+                            <constraint firstItem="1bA-YQ-hwJ" firstAttribute="top" secondItem="bcb-uA-gR2" secondAttribute="bottom" id="mfw-4A-cJg"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Bus Tracker" image="bus" id="wjs-gK-CfL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gyL-J3-aAM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1443.5" y="-807.5"/>
+        </scene>
+        <!--Transit-->
+        <scene sceneID="D43-TA-FxO">
+            <objects>
+                <viewController id="GZo-De-baZ" customClass="MainViewController" sceneMemberID="viewController">
+                    <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="SMk-Xc-gL5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </mapView>
+                    <tabBarItem key="tabBarItem" title="Transit" image="city_railway_station" id="DXv-FV-cQl"/>
+                    <connections>
+                        <outlet property="mapView" destination="SMk-Xc-gL5" id="skM-mP-soD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sNc-gU-Zff" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1443.5" y="-1545.5"/>
+        </scene>
+        <!--Weather Transit-->
+        <scene sceneID="yu7-Wc-v5R">
+            <objects>
+                <tabBarController title="Weather Transit" id="gIq-gH-oRf" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="vUk-AC-Nwg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="GZo-De-baZ" kind="relationship" relationship="viewControllers" id="hJH-Vu-et0"/>
+                        <segue destination="3PC-wn-rY5" kind="relationship" relationship="viewControllers" id="BAb-y2-4k7"/>
+                        <segue destination="PZA-sx-gTw" kind="relationship" relationship="viewControllers" id="GYm-Eh-6hm"/>
+                        <segue destination="BLc-vD-kJw" kind="relationship" relationship="viewControllers" id="kg8-eK-t41"/>
+                        <segue destination="y3D-w8-f3Y" kind="relationship" relationship="viewControllers" id="k1x-q3-ILA"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5hp-IT-nXs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1944.5" y="-203.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bus" width="25" height="25"/>
+        <image name="city_railway_station" width="26" height="26"/>
+        <image name="dashboard" width="25" height="25"/>
+        <image name="embassy" width="25" height="25"/>
+        <image name="torrential_rain" width="32" height="32"/>
+    </resources>
+</document>
