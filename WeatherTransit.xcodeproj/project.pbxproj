@@ -7,28 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B02421371C3F3CA9002AD3F5 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02421351C3F3CA9002AD3F5 /* WebKit.framework */; };
+		B02421381C3F3CA9002AD3F5 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02421361C3F3CA9002AD3F5 /* WebKit.framework */; };
+		B024213F1C3F48D5002AD3F5 /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B024213E1C3F48D5002AD3F5 /* WeatherViewController.m */; };
+		B02421451C487EE6002AD3F5 /* TransitInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B02421441C487EE6002AD3F5 /* TransitInfo.m */; };
+		B024214A1C49854D002AD3F5 /* BusTrackerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02421491C49854D002AD3F5 /* BusTrackerViewController.m */; };
+		B024214D1C498568002AD3F5 /* CTAStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B024214C1C498568002AD3F5 /* CTAStatusViewController.m */; };
+		B029DB371C9C39CD0016F45A /* ETA.m in Sources */ = {isa = PBXBuildFile; fileRef = B029DB361C9C39CD0016F45A /* ETA.m */; };
 		B0851D071C23987400BDF36A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0851D061C23987400BDF36A /* main.m */; };
 		B0851D0A1C23987400BDF36A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0851D091C23987400BDF36A /* AppDelegate.m */; };
-		B0851D0D1C23987400BDF36A /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0851D0C1C23987400BDF36A /* FirstViewController.m */; };
-		B0851D101C23987400BDF36A /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0851D0F1C23987400BDF36A /* SecondViewController.m */; };
 		B0851D131C23987400BDF36A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0851D111C23987400BDF36A /* Main.storyboard */; };
 		B0851D151C23987400BDF36A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0851D141C23987400BDF36A /* Assets.xcassets */; };
 		B0851D181C23987400BDF36A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0851D161C23987400BDF36A /* LaunchScreen.storyboard */; };
+		B0851D201C23989E00BDF36A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0851D1F1C23989E00BDF36A /* CoreLocation.framework */; };
+		B0851D221C2398A800BDF36A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0851D211C2398A800BDF36A /* MapKit.framework */; };
+		B0851D251C38452800BDF36A /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0851D241C38452800BDF36A /* MainViewController.m */; };
+		B0851D281C38453D00BDF36A /* ECCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0851D271C38453D00BDF36A /* ECCViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B02421351C3F3CA9002AD3F5 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		B02421361C3F3CA9002AD3F5 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/PrivateFrameworks/WebKit.framework; sourceTree = SDKROOT; };
+		B024213D1C3F48D5002AD3F5 /* WeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherViewController.h; sourceTree = "<group>"; };
+		B024213E1C3F48D5002AD3F5 /* WeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherViewController.m; sourceTree = "<group>"; };
+		B02421431C487EE6002AD3F5 /* TransitInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitInfo.h; sourceTree = "<group>"; };
+		B02421441C487EE6002AD3F5 /* TransitInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitInfo.m; sourceTree = "<group>"; };
+		B02421481C49854D002AD3F5 /* BusTrackerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusTrackerViewController.h; sourceTree = "<group>"; };
+		B02421491C49854D002AD3F5 /* BusTrackerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusTrackerViewController.m; sourceTree = "<group>"; };
+		B024214B1C498568002AD3F5 /* CTAStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTAStatusViewController.h; sourceTree = "<group>"; };
+		B024214C1C498568002AD3F5 /* CTAStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTAStatusViewController.m; sourceTree = "<group>"; };
+		B029DB351C9C39CD0016F45A /* ETA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETA.h; sourceTree = "<group>"; };
+		B029DB361C9C39CD0016F45A /* ETA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETA.m; sourceTree = "<group>"; };
 		B0851D021C23987400BDF36A /* WeatherTransit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherTransit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0851D061C23987400BDF36A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B0851D081C23987400BDF36A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B0851D091C23987400BDF36A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B0851D0B1C23987400BDF36A /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		B0851D0C1C23987400BDF36A /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		B0851D0E1C23987400BDF36A /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		B0851D0F1C23987400BDF36A /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		B0851D121C23987400BDF36A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B0851D141C23987400BDF36A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0851D171C23987400BDF36A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0851D191C23987400BDF36A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0851D1F1C23989E00BDF36A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		B0851D211C2398A800BDF36A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B0851D231C38452800BDF36A /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = ../MainViewController.h; sourceTree = "<group>"; };
+		B0851D241C38452800BDF36A /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ../MainViewController.m; sourceTree = "<group>"; };
+		B0851D261C38453D00BDF36A /* ECCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCViewController.h; sourceTree = "<group>"; };
+		B0851D271C38453D00BDF36A /* ECCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECCViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +59,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B02421371C3F3CA9002AD3F5 /* WebKit.framework in Frameworks */,
+				B02421381C3F3CA9002AD3F5 /* WebKit.framework in Frameworks */,
+				B0851D221C2398A800BDF36A /* MapKit.framework in Frameworks */,
+				B0851D201C23989E00BDF36A /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,6 +72,10 @@
 		B0851CF91C23987400BDF36A = {
 			isa = PBXGroup;
 			children = (
+				B02421351C3F3CA9002AD3F5 /* WebKit.framework */,
+				B02421361C3F3CA9002AD3F5 /* WebKit.framework */,
+				B0851D211C2398A800BDF36A /* MapKit.framework */,
+				B0851D1F1C23989E00BDF36A /* CoreLocation.framework */,
 				B0851D041C23987400BDF36A /* WeatherTransit */,
 				B0851D031C23987400BDF36A /* Products */,
 			);
@@ -61,13 +92,21 @@
 		B0851D041C23987400BDF36A /* WeatherTransit */ = {
 			isa = PBXGroup;
 			children = (
-				B0851D081C23987400BDF36A /* AppDelegate.h */,
-				B0851D091C23987400BDF36A /* AppDelegate.m */,
-				B0851D0B1C23987400BDF36A /* FirstViewController.h */,
-				B0851D0C1C23987400BDF36A /* FirstViewController.m */,
-				B0851D0E1C23987400BDF36A /* SecondViewController.h */,
-				B0851D0F1C23987400BDF36A /* SecondViewController.m */,
 				B0851D111C23987400BDF36A /* Main.storyboard */,
+				B0851D231C38452800BDF36A /* MainViewController.h */,
+				B0851D241C38452800BDF36A /* MainViewController.m */,
+				B029DB351C9C39CD0016F45A /* ETA.h */,
+				B029DB361C9C39CD0016F45A /* ETA.m */,
+				B02421481C49854D002AD3F5 /* BusTrackerViewController.h */,
+				B02421491C49854D002AD3F5 /* BusTrackerViewController.m */,
+				B024214B1C498568002AD3F5 /* CTAStatusViewController.h */,
+				B024214C1C498568002AD3F5 /* CTAStatusViewController.m */,
+				B02421431C487EE6002AD3F5 /* TransitInfo.h */,
+				B02421441C487EE6002AD3F5 /* TransitInfo.m */,
+				B024213D1C3F48D5002AD3F5 /* WeatherViewController.h */,
+				B024213E1C3F48D5002AD3F5 /* WeatherViewController.m */,
+				B0851D261C38453D00BDF36A /* ECCViewController.h */,
+				B0851D271C38453D00BDF36A /* ECCViewController.m */,
 				B0851D141C23987400BDF36A /* Assets.xcassets */,
 				B0851D161C23987400BDF36A /* LaunchScreen.storyboard */,
 				B0851D191C23987400BDF36A /* Info.plist */,
@@ -79,6 +118,8 @@
 		B0851D051C23987400BDF36A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B0851D081C23987400BDF36A /* AppDelegate.h */,
+				B0851D091C23987400BDF36A /* AppDelegate.m */,
 				B0851D061C23987400BDF36A /* main.m */,
 			);
 			name = "Supporting Files";
@@ -154,10 +195,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0851D101C23987400BDF36A /* SecondViewController.m in Sources */,
+				B024214A1C49854D002AD3F5 /* BusTrackerViewController.m in Sources */,
+				B0851D281C38453D00BDF36A /* ECCViewController.m in Sources */,
 				B0851D0A1C23987400BDF36A /* AppDelegate.m in Sources */,
-				B0851D0D1C23987400BDF36A /* FirstViewController.m in Sources */,
+				B029DB371C9C39CD0016F45A /* ETA.m in Sources */,
+				B0851D251C38452800BDF36A /* MainViewController.m in Sources */,
+				B024213F1C3F48D5002AD3F5 /* WeatherViewController.m in Sources */,
 				B0851D071C23987400BDF36A /* main.m in Sources */,
+				B02421451C487EE6002AD3F5 /* TransitInfo.m in Sources */,
+				B024214D1C498568002AD3F5 /* CTAStatusViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,9 +313,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 				INFOPLIST_FILE = WeatherTransit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.BurkeMedia.WeatherTransit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BurkeLabs.WeatherTransit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -278,9 +328,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 				INFOPLIST_FILE = WeatherTransit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.BurkeMedia.WeatherTransit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BurkeLabs.WeatherTransit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -304,6 +358,7 @@
 				B0851D1E1C23987400BDF36A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
