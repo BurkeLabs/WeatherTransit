@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B02421371C3F3CA9002AD3F5 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02421351C3F3CA9002AD3F5 /* WebKit.framework */; };
-		B02421381C3F3CA9002AD3F5 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02421361C3F3CA9002AD3F5 /* WebKit.framework */; };
 		B024213F1C3F48D5002AD3F5 /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B024213E1C3F48D5002AD3F5 /* WeatherViewController.m */; };
 		B02421451C487EE6002AD3F5 /* TransitInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B02421441C487EE6002AD3F5 /* TransitInfo.m */; };
 		B024214A1C49854D002AD3F5 /* BusTrackerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02421491C49854D002AD3F5 /* BusTrackerViewController.m */; };
@@ -27,7 +26,6 @@
 
 /* Begin PBXFileReference section */
 		B02421351C3F3CA9002AD3F5 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		B02421361C3F3CA9002AD3F5 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/PrivateFrameworks/WebKit.framework; sourceTree = SDKROOT; };
 		B024213D1C3F48D5002AD3F5 /* WeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherViewController.h; sourceTree = "<group>"; };
 		B024213E1C3F48D5002AD3F5 /* WeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherViewController.m; sourceTree = "<group>"; };
 		B02421431C487EE6002AD3F5 /* TransitInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitInfo.h; sourceTree = "<group>"; };
@@ -60,7 +58,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B02421371C3F3CA9002AD3F5 /* WebKit.framework in Frameworks */,
-				B02421381C3F3CA9002AD3F5 /* WebKit.framework in Frameworks */,
 				B0851D221C2398A800BDF36A /* MapKit.framework in Frameworks */,
 				B0851D201C23989E00BDF36A /* CoreLocation.framework in Frameworks */,
 			);
@@ -73,7 +70,6 @@
 			isa = PBXGroup;
 			children = (
 				B02421351C3F3CA9002AD3F5 /* WebKit.framework */,
-				B02421361C3F3CA9002AD3F5 /* WebKit.framework */,
 				B0851D211C2398A800BDF36A /* MapKit.framework */,
 				B0851D1F1C23989E00BDF36A /* CoreLocation.framework */,
 				B0851D041C23987400BDF36A /* WeatherTransit */,

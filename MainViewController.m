@@ -16,11 +16,12 @@
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property NSXMLParser *ctaTrain;
 @property NSArray *ctaTrainArray;
-@property CLLocationManager *transit;
+@property CLLocationManager *transitLocation;
 @property NSArray *ctaStatus;
 @property NSMutableArray *etas;
 @property ETA *currentParsedEta;
 @property NSDateFormatter *ctaDateFormat;
+@property MKPointAnnotation *trainStation;
 typedef enum {
     NONE,
     staId,
@@ -42,14 +43,24 @@ typedef enum {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.transit = [CLLocationManager new];
-
-    [self.transit requestWhenInUseAuthorization];
+    self.transitLocation = [CLLocationManager new];
+//    self.mapView.delegate = self;
+    [self.transitLocation requestWhenInUseAuthorization];
     self.mapView.showsUserLocation = YES;
-    self.transit.delegate = self;
+    self.transitLocation.delegate = self;
     self.ctaTrain.delegate = self;
 
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance (CLLocationCoordinate2DMake(41.9456354, -87.6679754), 5000, 5000);
+    [self.mapView setRegion:region animated:NO];
+
+
     [self loadTransitData];
+    [self addAnnotation];
+}
+
+-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+{
+//    MKUserLocation *userLocation = self.mapView.userLocation;
 }
 
 -(void)loadTransitData {
@@ -64,9 +75,32 @@ typedef enum {
     [self.ctaTrain setDelegate:self];
 //    [self.ctaTrain setShouldResolveExternalEntities:YES];
     success = [self.ctaTrain parse];
-    NSLog(@"%d, Successful or not successful %@", success, self.etas);
+//    NSLog(@"%d, Successful or not successful %@", success, self.etas);
 //    [self.ctaTrain release];
 }
+
+-(void)addAnnotation
+{
+    self.trainStation = [MKPointAnnotation new];
+    self.trainStation.coordinate = CLLocationCoordinate2DMake(self.currentParsedEta.latitude, self.currentParsedEta.longitude);
+//    [self.mapView addAnnotation:self.trainStation];
+}
+
+//-(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+//{
+//    if ([annotation isEqual:mapView.userLocation]) {
+//        return nil;
+//    }
+//    MKAnnotationView *pin = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:nil];
+//    pin.canShowCallout = YES;
+//    pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+//    return pin;
+//}
+
+//-(void)mapView:(MKMapView *)mapView annotationView:(nonnull MKAnnotationView *)view calloutAccessoryControlTapped:(nonnull UIControl *)control
+//{
+//    [self.mapView setRegion:MKCoordinateRegionMake(view.annotation.coordinate, MKCoordinateSpanMake(0.01, 0.01)) animated:YES];
+//}
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     if ([elementName  isEqual: @"eta"]) {
@@ -141,6 +175,11 @@ typedef enum {
                 break;
         }
     }
+}
+
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(nonnull NSError *)error
+{
+    NSLog(@"couldn't find user\t%@", error);
 }
 
 @end
