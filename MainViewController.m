@@ -9,19 +9,21 @@
 #import "MainViewController.h"
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
-#import "ETA.h"
+#import "Train.h"
 
 @interface MainViewController () <CLLocationManagerDelegate, MKMapViewDelegate, NSXMLParserDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+
 @property NSXMLParser *ctaTrain;
 @property NSArray *ctaTrainArray;
 @property CLLocationManager *transitLocation;
 @property NSArray *ctaStatus;
 @property NSMutableArray *etas;
-@property ETA *currentParsedEta;
+@property Train *currentParsedEta;
 @property NSDateFormatter *ctaDateFormat;
 @property MKPointAnnotation *trainStation;
+
 typedef enum {
     NONE,
     staId,
@@ -51,8 +53,7 @@ typedef enum {
     self.ctaTrain.delegate = self;
 
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance (CLLocationCoordinate2DMake(41.9456354, -87.6679754), 5000, 5000);
-    [self.mapView setRegion:region animated:NO];
-
+    [self.mapView setRegion:region animated:YES];
 
     [self loadTransitData];
     [self addAnnotation];
@@ -83,18 +84,18 @@ typedef enum {
 {
     self.trainStation = [MKPointAnnotation new];
     self.trainStation.coordinate = CLLocationCoordinate2DMake(self.currentParsedEta.latitude, self.currentParsedEta.longitude);
-//    [self.mapView addAnnotation:self.trainStation];
 }
 
 //-(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 //{
-//    if ([annotation isEqual:mapView.userLocation]) {
-//        return nil;
-//    }
+////    if ([annotation isEqual:mapView.userLocation]) {
+////        return nil;
+////    } else {
 //    MKAnnotationView *pin = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:nil];
 //    pin.canShowCallout = YES;
 //    pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
 //    return pin;
+////    }
 //}
 
 //-(void)mapView:(MKMapView *)mapView annotationView:(nonnull MKAnnotationView *)view calloutAccessoryControlTapped:(nonnull UIControl *)control
@@ -104,7 +105,7 @@ typedef enum {
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     if ([elementName  isEqual: @"eta"]) {
-        self.currentParsedEta = [ETA new];
+        self.currentParsedEta = [Train new];
     } else if (self.currentParsedEta) {
         if([elementName  isEqual: @"staId"]) {
             self.currentField = staId;

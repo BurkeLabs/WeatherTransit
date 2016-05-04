@@ -7,73 +7,154 @@
 //  Awu5sVzWPUXFske5WVnHMyDgF
 
 #import "BusTrackerViewController.h"
+#import "BusStopViewController.h"
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "BusName.h"
 
-@interface BusTrackerViewController () <UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate>
+@interface BusTrackerViewController () <UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate, NSXMLParserDelegate, UISearchBarDelegate>
 
-@property NSArray *busTracker;
-@property NSArray *closestBus;
+@property (weak, nonatomic) IBOutlet UISearchBar *busSearch;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property NSMutableArray *busStationArray; //results from XML
+@property NSMutableArray *busSearchArray; // Search Results
 @property CLLocationManager *busRoute;
 @property MKPointAnnotation *pointAnnotation;
+@property NSXMLParser *ctaBus;
+@property BusName *busName;
+@property BOOL busSearching;
+
+typedef enum {
+    NONE,
+    rt,
+    rtnm,
+} ETAField;
+
+@property ETAField currentField;
+
 @end
 
 @implementation BusTrackerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.busRoute =[CLLocationManager new];
+    self.busRoute.delegate = self;
+    self.busSearching = false;
+    [self loadBusData];
 }
 
+-(void)loadBusData
+{
+    self.busStationArray = [NSMutableArray new];
+    self.busName = NULL;
+    self.currentField = 0;
+
+    BOOL success;
+    NSURL *xmlURL = [NSURL URLWithString:@"http://www.ctabustracker.com/bustime/api/v1/getroutes?key=Awu5sVzWPUXFske5WVnHMyDgF"];
+
+    self.ctaBus = [[NSXMLParser alloc] initWithContentsOfURL:xmlURL];
+    [self.ctaBus setDelegate:self];
+    success = [self.ctaBus parse];
+}
+
+-(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
+    NSLog(@"START ELEMENT %@", elementName);
+    if ([elementName isEqual:@"route"]) {
+        self.busName = [BusName new];
+    }
+    else if (self.busName) {
+        if ([elementName isEqual:@"rt"]) {
+            self.currentField = rt;
+        } else if ([elementName isEqual:@"rtnm"]){
+            self.currentField = rtnm;
+        }
+    }
+}
+
+-(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
+    NSLog(@"END ELEMENT %@", elementName);
+    if ([elementName  isEqual: @"route"]) {
+        [self.busStationArray addObject:self.busName];
+        self.busName = NULL;
+    } else {
+        self.currentField = NONE;
+    }
+}
+
+-(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
+    NSLog(@"CHARS \"%@\"", string);
+    if (self.busName) {
+        switch (self.currentField) {
+            case rt:
+                self.busName.route = string;
+                break;
+            case rtnm:
+                self.busName.routeName = string;
+                break;
+            case NONE:
+                break;
+            default:
+                break;
+        }
+    }
+}
+
+#pragma mark - UISearchBarDelegate
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    if (searchText.length > 0) {
+        self.busSearching = true;
+        self.busSearchArray = [NSMutableArray new];
+        for (BusName *bus in self.busSearchArray) {
+            NSRange range = [bus.routeName rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            if (range.location != NSNotFound) {
+                [self.busSearchArray addObject:bus];
+            }
+        }
+    } else {
+        self.busSearching = false;
+    }
+    [self resignFirstResponder];
+    [self.tableView reloadData];
+}
+
+#pragma mark - UITableViewDataSource and UITableViewDelegate
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"busTracker"];
-//    cell.textLabel.text = [];
+
+    BusName *busName;
+    if (self.busSearching) {
+        busName = [self.busSearchArray objectAtIndex:indexPath.row];
+    } else {
+        busName = [self.busStationArray objectAtIndex:indexPath.row];
+    }
+    cell.textLabel.text = busName.route;
+    cell.detailTextLabel.text = busName.routeName;
     return cell;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.busTracker.count;
-}
-
--(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
-{
-    CLLocation *location = locations.firstObject;
-    if (location.verticalAccuracy < 1000 && location.horizontalAccuracy < 1000) {
-        [self.busRoute stopUpdatingLocation];
-        [self reverseGeocode:location];
+    if (self.busSearching == true) {
+        return self.busSearchArray.count;
+    } else {
+    return self.busStationArray.count;
     }
 }
 
--(void)reverseGeocode:(CLLocation *)location
-{
-    CLGeocoder *geocoder = [CLGeocoder new];
-    [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
-        [self findBusStopNear:location];
-    }];
-}
-
--(void)findBusStopNear:(CLLocation *)location
-{
-    MKLocalSearchRequest *request = [MKLocalSearchRequest new];
-    request.naturalLanguageQuery = @"Bus Stop";
-    request.region = MKCoordinateRegionMake(location.coordinate, MKCoordinateSpanMake(1, 1));
-    MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
-    [search startWithCompletionHandler:^(MKLocalSearchResponse * _Nullable response, NSError * _Nullable error) {
-        //do stuff
-    }];
-}
-
--(void)locationManager:(CLLocationManager *)manager didFailWithError:(nonnull NSError *)error
-{
-    NSLog(@"couldn't find user\t%@", error);
-}
-/*
 #pragma mark - Navigation
-
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    BusStopViewController *busStopVC = segue.destinationViewController;
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    BusName *busName = [self.busStationArray objectAtIndex:indexPath.row];
+    if (self.busSearching) {
+        busName = [self.busSearchArray objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+    } else {
+        busName = [self.busStationArray objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+    }
+    busStopVC.busName = busName;
 }
-*/
 
 @end

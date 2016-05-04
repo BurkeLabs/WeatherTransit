@@ -12,7 +12,7 @@
 		B02421451C487EE6002AD3F5 /* TransitInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B02421441C487EE6002AD3F5 /* TransitInfo.m */; };
 		B024214A1C49854D002AD3F5 /* BusTrackerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02421491C49854D002AD3F5 /* BusTrackerViewController.m */; };
 		B024214D1C498568002AD3F5 /* CTAStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B024214C1C498568002AD3F5 /* CTAStatusViewController.m */; };
-		B029DB371C9C39CD0016F45A /* ETA.m in Sources */ = {isa = PBXBuildFile; fileRef = B029DB361C9C39CD0016F45A /* ETA.m */; };
+		B029DB371C9C39CD0016F45A /* Train.m in Sources */ = {isa = PBXBuildFile; fileRef = B029DB361C9C39CD0016F45A /* Train.m */; };
 		B0851D071C23987400BDF36A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0851D061C23987400BDF36A /* main.m */; };
 		B0851D0A1C23987400BDF36A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0851D091C23987400BDF36A /* AppDelegate.m */; };
 		B0851D131C23987400BDF36A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0851D111C23987400BDF36A /* Main.storyboard */; };
@@ -22,6 +22,9 @@
 		B0851D221C2398A800BDF36A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0851D211C2398A800BDF36A /* MapKit.framework */; };
 		B0851D251C38452800BDF36A /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0851D241C38452800BDF36A /* MainViewController.m */; };
 		B0851D281C38453D00BDF36A /* ECCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0851D271C38453D00BDF36A /* ECCViewController.m */; };
+		B09869141CC9361F00C7756A /* BusName.m in Sources */ = {isa = PBXBuildFile; fileRef = B09869131CC9361F00C7756A /* BusName.m */; };
+		B09869171CD2BEE100C7756A /* BusStopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B09869161CD2BEE100C7756A /* BusStopViewController.m */; };
+		B098691A1CD2BF5C00C7756A /* UpcomingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B09869191CD2BF5C00C7756A /* UpcomingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,8 +37,8 @@
 		B02421491C49854D002AD3F5 /* BusTrackerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusTrackerViewController.m; sourceTree = "<group>"; };
 		B024214B1C498568002AD3F5 /* CTAStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTAStatusViewController.h; sourceTree = "<group>"; };
 		B024214C1C498568002AD3F5 /* CTAStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTAStatusViewController.m; sourceTree = "<group>"; };
-		B029DB351C9C39CD0016F45A /* ETA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETA.h; sourceTree = "<group>"; };
-		B029DB361C9C39CD0016F45A /* ETA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETA.m; sourceTree = "<group>"; };
+		B029DB351C9C39CD0016F45A /* Train.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Train.h; sourceTree = "<group>"; };
+		B029DB361C9C39CD0016F45A /* Train.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Train.m; sourceTree = "<group>"; };
 		B0851D021C23987400BDF36A /* WeatherTransit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherTransit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0851D061C23987400BDF36A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B0851D081C23987400BDF36A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -50,6 +53,12 @@
 		B0851D241C38452800BDF36A /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ../MainViewController.m; sourceTree = "<group>"; };
 		B0851D261C38453D00BDF36A /* ECCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCViewController.h; sourceTree = "<group>"; };
 		B0851D271C38453D00BDF36A /* ECCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECCViewController.m; sourceTree = "<group>"; };
+		B09869121CC9361E00C7756A /* BusName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusName.h; sourceTree = "<group>"; };
+		B09869131CC9361F00C7756A /* BusName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusName.m; sourceTree = "<group>"; };
+		B09869151CD2BEE000C7756A /* BusStopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusStopViewController.h; sourceTree = "<group>"; };
+		B09869161CD2BEE100C7756A /* BusStopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusStopViewController.m; sourceTree = "<group>"; };
+		B09869181CD2BF5C00C7756A /* UpcomingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpcomingViewController.h; sourceTree = "<group>"; };
+		B09869191CD2BF5C00C7756A /* UpcomingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpcomingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,10 +100,16 @@
 				B0851D111C23987400BDF36A /* Main.storyboard */,
 				B0851D231C38452800BDF36A /* MainViewController.h */,
 				B0851D241C38452800BDF36A /* MainViewController.m */,
-				B029DB351C9C39CD0016F45A /* ETA.h */,
-				B029DB361C9C39CD0016F45A /* ETA.m */,
+				B029DB351C9C39CD0016F45A /* Train.h */,
+				B029DB361C9C39CD0016F45A /* Train.m */,
 				B02421481C49854D002AD3F5 /* BusTrackerViewController.h */,
 				B02421491C49854D002AD3F5 /* BusTrackerViewController.m */,
+				B09869121CC9361E00C7756A /* BusName.h */,
+				B09869131CC9361F00C7756A /* BusName.m */,
+				B09869151CD2BEE000C7756A /* BusStopViewController.h */,
+				B09869161CD2BEE100C7756A /* BusStopViewController.m */,
+				B09869181CD2BF5C00C7756A /* UpcomingViewController.h */,
+				B09869191CD2BF5C00C7756A /* UpcomingViewController.m */,
 				B024214B1C498568002AD3F5 /* CTAStatusViewController.h */,
 				B024214C1C498568002AD3F5 /* CTAStatusViewController.m */,
 				B02421431C487EE6002AD3F5 /* TransitInfo.h */,
@@ -194,8 +209,11 @@
 				B024214A1C49854D002AD3F5 /* BusTrackerViewController.m in Sources */,
 				B0851D281C38453D00BDF36A /* ECCViewController.m in Sources */,
 				B0851D0A1C23987400BDF36A /* AppDelegate.m in Sources */,
-				B029DB371C9C39CD0016F45A /* ETA.m in Sources */,
+				B09869171CD2BEE100C7756A /* BusStopViewController.m in Sources */,
+				B098691A1CD2BF5C00C7756A /* UpcomingViewController.m in Sources */,
+				B029DB371C9C39CD0016F45A /* Train.m in Sources */,
 				B0851D251C38452800BDF36A /* MainViewController.m in Sources */,
+				B09869141CC9361F00C7756A /* BusName.m in Sources */,
 				B024213F1C3F48D5002AD3F5 /* WeatherViewController.m in Sources */,
 				B0851D071C23987400BDF36A /* main.m in Sources */,
 				B02421451C487EE6002AD3F5 /* TransitInfo.m in Sources */,

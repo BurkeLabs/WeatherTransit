@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ETA : NSObject
+@interface Train : NSObject
 
 @property int stationID;
 @property int stopID;
@@ -19,7 +19,5 @@
 @property NSDate *nextTrain;
 @property float latitude;
 @property float longitude;
-
-
 
 @end

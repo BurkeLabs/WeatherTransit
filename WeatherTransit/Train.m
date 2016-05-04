@@ -6,9 +6,9 @@
 //  Copyright © 2016 Burke. All rights reserved.
 //
 
-#import "ETA.h"
+#import "Train.h"
 
-@implementation ETA
+@implementation Train
 
 -(NSString *)description{
     return [NSString stringWithFormat:@"StationID, %i, StationName, %@", _stationID, _stationName];
