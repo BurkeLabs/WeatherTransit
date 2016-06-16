@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BusStops.h"
 
 @interface UpcomingViewController : UIViewController
+
+@property BusStops *busStopNew;
 
 @end

@@ -22,7 +22,6 @@
 @property NSMutableArray *etas;
 @property Train *currentParsedEta;
 @property NSDateFormatter *ctaDateFormat;
-@property MKPointAnnotation *trainStation;
 
 typedef enum {
     NONE,
@@ -82,26 +81,20 @@ typedef enum {
 
 -(void)addAnnotation
 {
-    self.trainStation = [MKPointAnnotation new];
-    self.trainStation.coordinate = CLLocationCoordinate2DMake(self.currentParsedEta.latitude, self.currentParsedEta.longitude);
+    for (Train *train in self.etas) {
+        MKPointAnnotation *point;
+        point = [MKPointAnnotation new];
+        point.coordinate = CLLocationCoordinate2DMake(train.latitude, train.longitude);
+        point.title = train.stationName;
+        [self.mapView addAnnotation:point];
+    }
 }
 
-//-(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
-//{
-////    if ([annotation isEqual:mapView.userLocation]) {
-////        return nil;
-////    } else {
-//    MKAnnotationView *pin = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:nil];
-//    pin.canShowCallout = YES;
-//    pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-//    return pin;
-////    }
-//}
-
-//-(void)mapView:(MKMapView *)mapView annotationView:(nonnull MKAnnotationView *)view calloutAccessoryControlTapped:(nonnull UIControl *)control
-//{
-//    [self.mapView setRegion:MKCoordinateRegionMake(view.annotation.coordinate, MKCoordinateSpanMake(0.01, 0.01)) animated:YES];
-//}
+-(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
+    MKAnnotationView *aView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CTAStations"];
+    aView.image = [UIImage imageNamed:@"railroad_car"];
+    return aView;
+}
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     if ([elementName  isEqual: @"eta"]) {

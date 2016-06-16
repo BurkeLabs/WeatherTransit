@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Upcoming.h"
 
 @interface BusTrackerViewController : UIViewController
+
+@property Upcoming *upcoming;
 
 @end
