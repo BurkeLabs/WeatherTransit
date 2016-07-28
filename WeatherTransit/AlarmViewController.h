@@ -15,5 +15,5 @@
 
 /******** 2 ********/
 -(void)updateClockLabel;
-
+-(void)updateAlarmLabel;
 @end

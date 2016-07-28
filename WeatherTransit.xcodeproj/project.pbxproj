@@ -90,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B0783BF41D2BDBD60078E6E0 /* Unused VC */ = {
+			isa = PBXGroup;
+			children = (
+				B0851D231C38452800BDF36A /* MainViewController.h */,
+				B0851D241C38452800BDF36A /* MainViewController.m */,
+			);
+			name = "Unused VC";
+			sourceTree = "<group>";
+		};
 		B0851CF91C23987400BDF36A = {
 			isa = PBXGroup;
 			children = (
@@ -116,8 +125,6 @@
 				B0851D111C23987400BDF36A /* Main.storyboard */,
 				B0FD50C31CEE183500E26EAD /* AlarmViewController.h */,
 				B0FD50C41CEE183500E26EAD /* AlarmViewController.m */,
-				B0851D231C38452800BDF36A /* MainViewController.h */,
-				B0851D241C38452800BDF36A /* MainViewController.m */,
 				B029DB351C9C39CD0016F45A /* Train.h */,
 				B029DB361C9C39CD0016F45A /* Train.m */,
 				B02421481C49854D002AD3F5 /* BusTrackerViewController.h */,
@@ -145,6 +152,7 @@
 				B0851D141C23987400BDF36A /* Assets.xcassets */,
 				B0851D161C23987400BDF36A /* LaunchScreen.storyboard */,
 				B0851D191C23987400BDF36A /* Info.plist */,
+				B0783BF41D2BDBD60078E6E0 /* Unused VC */,
 				B0851D051C23987400BDF36A /* Supporting Files */,
 			);
 			path = WeatherTransit;

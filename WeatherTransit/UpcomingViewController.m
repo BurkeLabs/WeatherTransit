@@ -132,17 +132,15 @@ typedef enum {
 #pragma mark - UITableViewDataSource and UITableViewDelegate
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Upcoming"];
-//    Upcoming *upcomingBus = [self.upcomingArray objectAtIndext:indexPath.row];
-    cell.textLabel.text = self.up.stopName;
-    cell.detailTextLabel.text = self.up.predictionTime;
+    Upcoming *upcomingBus = [self.upcomingArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = upcomingBus.stopName;
+    cell.detailTextLabel.text = upcomingBus.predictionTime;
     return cell;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.upcomingArray.count;
 }
-
-@end
 
 /*
  #pragma mark - Navigation
@@ -153,3 +151,5 @@ typedef enum {
  // Pass the selected object to the new view controller.
  }
  */
+
+@end

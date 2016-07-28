@@ -10,4 +10,8 @@
 
 @implementation TransitInfo
 
+-(NSString *)description{
+    return [NSString stringWithFormat:@"Route %@, ServiceID %@, RouteStatus %@, RouteStatusColor %@", _Route, _ServiceId, _RouteStatus, _RouteStatusColor];
+}
+
 @end

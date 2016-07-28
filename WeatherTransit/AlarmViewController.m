@@ -12,6 +12,12 @@
 
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UIButton *alarmButton;
+@property (weak, nonatomic) IBOutlet UILabel *alarm1;
+@property (weak, nonatomic) IBOutlet UISwitch *switch1;
+@property (weak, nonatomic) IBOutlet UILabel *alarm2;
+@property (weak, nonatomic) IBOutlet UISwitch *switch2;
+@property (weak, nonatomic) IBOutlet UILabel *alarm3;
+@property (weak, nonatomic) IBOutlet UISwitch *switch3;
 
 @end
 
@@ -22,7 +28,6 @@
 
     /******** 1 ********/
     [self updateClockLabel];
-
 }
 
 /******** 1 ********/
@@ -37,6 +42,17 @@
 
     /******** 4 ********/
     [self performSelector:@selector(updateClockLabel) withObject:self afterDelay:1.0];
+}
+
+- (IBAction)setAlarm:(UIButton *)sender {
+//    [self.alarmButton updateAlarmLabel]
+}
+-(void)updateAlarmLabel{
+    NSDateFormatter *clockFormat2 = [NSDateFormatter new];
+    [clockFormat2 setDateFormat:@"hh:mm a"];
+    self.alarm1.text = [clockFormat2 stringFromDate:[NSDate date]];
+    self.alarm2.text = [clockFormat2 stringFromDate:[NSDate date]];
+    self.alarm3.text = [clockFormat2 stringFromDate:[NSDate date]];
 }
 
 @end

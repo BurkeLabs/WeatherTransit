@@ -118,7 +118,6 @@ typedef enum {
 #pragma mark - UITableViewDataSource and UITableViewDelegate
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"busTracker"];
-
     BusName *busName = [self.activeArray objectAtIndex:indexPath.row];
     cell.textLabel.text = busName.route;
     cell.detailTextLabel.text = busName.routeName;
