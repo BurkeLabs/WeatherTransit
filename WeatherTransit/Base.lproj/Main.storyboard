@@ -264,7 +264,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="wd0-yf-77J">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="wd0-yf-77J">
                                 <rect key="frame" x="0.0" y="134" width="367" height="484"/>
                                 <subviews>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="pUe-47-tWJ">
@@ -276,6 +276,9 @@
                                         <date key="date" timeIntervalSinceReferenceDate="487196412.96473801">
                                             <!--2016-06-09 20:20:12 +0000-->
                                         </date>
+                                        <connections>
+                                            <action selector="dateWheel:" destination="GZo-De-baZ" eventType="valueChanged" id="c0e-wO-iLf"/>
+                                        </connections>
                                     </datePicker>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NzG-yT-nx4">
                                         <rect key="frame" x="289" y="251" width="79" height="30"/>
@@ -291,24 +294,6 @@
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rhu-F0-Ej5">
                                         <rect key="frame" x="281" y="288" width="51" height="31"/>
                                     </switch>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uxX-kb-FG3">
-                                        <rect key="frame" x="281" y="332" width="51" height="31"/>
-                                    </switch>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hGw-8O-Ku0">
-                                        <rect key="frame" x="281" y="376" width="51" height="31"/>
-                                    </switch>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00 A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2jR-Li-XA0">
-                                        <rect key="frame" x="19" y="332" width="144" height="31"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00 A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UlR-X2-4yy">
-                                        <rect key="frame" x="19" y="376" width="144" height="31"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00 A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Twv-8g-dhS">
                                         <rect key="frame" x="19" y="288" width="144" height="31"/>
                                         <constraints>
@@ -321,26 +306,13 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="pUe-47-tWJ" firstAttribute="top" secondItem="wd0-yf-77J" secondAttribute="top" constant="26" id="2Sm-QB-ISg"/>
-                                    <constraint firstItem="Rhu-F0-Ej5" firstAttribute="leading" secondItem="uxX-kb-FG3" secondAttribute="leading" id="6DX-eM-pWB"/>
-                                    <constraint firstItem="UlR-X2-4yy" firstAttribute="bottom" secondItem="hGw-8O-Ku0" secondAttribute="bottom" id="8uT-wC-LZH"/>
-                                    <constraint firstItem="UlR-X2-4yy" firstAttribute="top" secondItem="2jR-Li-XA0" secondAttribute="bottom" constant="13" id="8yl-JY-8dt"/>
-                                    <constraint firstItem="2jR-Li-XA0" firstAttribute="top" secondItem="uxX-kb-FG3" secondAttribute="top" id="Env-hd-8Dz"/>
-                                    <constraint firstItem="Twv-8g-dhS" firstAttribute="leading" secondItem="2jR-Li-XA0" secondAttribute="leading" id="FuW-s2-MmB"/>
-                                    <constraint firstItem="Twv-8g-dhS" firstAttribute="trailing" secondItem="2jR-Li-XA0" secondAttribute="trailing" id="GTI-rv-AuN"/>
                                     <constraint firstItem="Twv-8g-dhS" firstAttribute="leading" secondItem="wd0-yf-77J" secondAttribute="leading" constant="19" id="HGG-jP-Xyy"/>
-                                    <constraint firstItem="2jR-Li-XA0" firstAttribute="leading" secondItem="UlR-X2-4yy" secondAttribute="leading" id="K14-rF-Wnw"/>
                                     <constraint firstItem="Rhu-F0-Ej5" firstAttribute="top" secondItem="NzG-yT-nx4" secondAttribute="bottom" constant="7" id="LEw-pG-wCf"/>
-                                    <constraint firstItem="2jR-Li-XA0" firstAttribute="bottom" secondItem="uxX-kb-FG3" secondAttribute="bottom" id="Nd1-iG-htP"/>
                                     <constraint firstAttribute="trailing" secondItem="NzG-yT-nx4" secondAttribute="trailing" constant="7" id="P4W-Vl-b9b"/>
-                                    <constraint firstAttribute="bottom" secondItem="UlR-X2-4yy" secondAttribute="bottom" constant="77" id="Qvl-F5-vE0"/>
                                     <constraint firstItem="Twv-8g-dhS" firstAttribute="bottom" secondItem="Rhu-F0-Ej5" secondAttribute="bottom" id="dtv-Go-Sjq"/>
-                                    <constraint firstItem="2jR-Li-XA0" firstAttribute="top" secondItem="Twv-8g-dhS" secondAttribute="bottom" constant="13" id="kro-QR-OEO"/>
                                     <constraint firstItem="Twv-8g-dhS" firstAttribute="top" secondItem="Rhu-F0-Ej5" secondAttribute="top" id="mQ5-HN-1iu"/>
                                     <constraint firstItem="NzG-yT-nx4" firstAttribute="top" secondItem="pUe-47-tWJ" secondAttribute="bottom" constant="9" id="oVU-79-6Lc"/>
                                     <constraint firstAttribute="trailing" secondItem="pUe-47-tWJ" secondAttribute="trailing" constant="8" id="pxT-tZ-hiY"/>
-                                    <constraint firstItem="2jR-Li-XA0" firstAttribute="trailing" secondItem="UlR-X2-4yy" secondAttribute="trailing" id="s7h-ja-CGA"/>
-                                    <constraint firstItem="uxX-kb-FG3" firstAttribute="leading" secondItem="hGw-8O-Ku0" secondAttribute="leading" id="sx4-lh-coL"/>
-                                    <constraint firstItem="UlR-X2-4yy" firstAttribute="top" secondItem="hGw-8O-Ku0" secondAttribute="top" id="vPF-Rn-6lq"/>
                                     <constraint firstItem="pUe-47-tWJ" firstAttribute="leading" secondItem="wd0-yf-77J" secondAttribute="leading" constant="8" id="vUy-A5-MAf"/>
                                     <constraint firstAttribute="trailing" secondItem="Rhu-F0-Ej5" secondAttribute="trailing" constant="45" id="xw7-Oj-hKj"/>
                                 </constraints>
@@ -360,14 +332,10 @@
                     <tabBarItem key="tabBarItem" title="Alarm" image="watch" id="DXv-FV-cQl"/>
                     <connections>
                         <outlet property="alarm1" destination="Twv-8g-dhS" id="I8I-Rh-tMB"/>
-                        <outlet property="alarm2" destination="2jR-Li-XA0" id="Asm-yY-0U5"/>
-                        <outlet property="alarm3" destination="UlR-X2-4yy" id="sfK-cd-VNh"/>
                         <outlet property="alarmButton" destination="NzG-yT-nx4" id="QeQ-ka-x2X"/>
                         <outlet property="clockLabel" destination="zf1-nS-GEq" id="I4H-Ic-A7N"/>
                         <outlet property="datePicker" destination="pUe-47-tWJ" id="QhN-ki-ENe"/>
                         <outlet property="switch1" destination="Rhu-F0-Ej5" id="axi-Pn-h6h"/>
-                        <outlet property="switch2" destination="uxX-kb-FG3" id="FgS-Ij-VGS"/>
-                        <outlet property="switch3" destination="hGw-8O-Ku0" id="94a-2H-OCy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sNc-gU-Zff" userLabel="First Responder" sceneMemberID="firstResponder"/>
