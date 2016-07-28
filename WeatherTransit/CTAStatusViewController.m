@@ -14,10 +14,10 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
-@property NSMutableArray *busStatus; //xml
+@property NSMutableArray *busStatus; //xml array
 @property NSXMLParser *ctaStatus; //xml part 2
-//@property NSMutableArray *ctaSearchStatus; //search bar
-//@property NSMutableArray *ctaSearchArray; // search and xml
+@property NSMutableArray *ctaSearchStatus; //search bar
+@property NSMutableArray *visibleStatus; // search and xml
 @property TransitInfo *status;
 
 typedef enum {
@@ -34,7 +34,7 @@ typedef enum {
     [super viewDidLoad];
 
     [self loadCTAStatusReport];
-//    self.searchBar.delegate = self;
+    self.searchBar.delegate = self;
 }
 
 -(void)loadCTAStatusReport{
@@ -47,39 +47,39 @@ typedef enum {
     self.ctaStatus = [[NSXMLParser alloc] initWithContentsOfURL:xmlURL];
     self.ctaStatus.delegate = self;
     success = [self.ctaStatus parse];
-//    self.busStatus = self.ctaSearchStatus;
+    self.visibleStatus = self.busStatus;
     [self.tableView reloadData];
 }
 
 #pragma mark - UISearchBarDelegate
-//-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
-//    if (searchBar.text > 0) {
-//        self.ctaSearchStatus = [NSMutableArray new];
-//        for (TransitInfo *info in self.busStatus) {
-//            NSRange range = [info.Route rangeOfString:searchText options:NSCaseInsensitiveSearch];
-//            if (range.location !=NSNotFound) {
-//                [self.ctaSearchStatus addObject:info];
-//            }
-//        }
-//        self.ctaSearchArray = self.ctaSearchStatus;
-//    } else {
-//        self.ctaSearchArray = self.busStatus;
-//    }
-//    [self resignFirstResponder];
-//    [self.tableView reloadData];
-//}
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    if (searchBar.text > 0) {
+        self.ctaSearchStatus = [NSMutableArray new];
+        for (TransitInfo *info in self.busStatus) {
+            NSRange range = [info.Route rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            if (range.location !=NSNotFound) {
+                [self.ctaSearchStatus addObject:info];
+            }
+        }
+        self.visibleStatus = self.ctaSearchStatus;
+    } else {
+        self.visibleStatus = self.busStatus;
+    }
+    [self resignFirstResponder];
+    [self.tableView reloadData];
+}
 
 #pragma mark - UITableView DataSource and Delegate
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ctaStatus"];
-    TransitInfo *transitInfo = [self.busStatus objectAtIndex:indexPath.row];
+    TransitInfo *transitInfo = [self.visibleStatus objectAtIndex:indexPath.row];
     cell.textLabel.text = transitInfo.Route;
     cell.detailTextLabel.text = transitInfo.RouteStatus;
     return cell;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.busStatus.count;
+    return self.visibleStatus.count;
 }
 
 #pragma mark - NSXML
