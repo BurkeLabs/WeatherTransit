@@ -264,11 +264,11 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="wd0-yf-77J">
-                                <rect key="frame" x="0.0" y="134" width="367" height="484"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="wd0-yf-77J">
+                                <rect key="frame" x="0.0" y="130" width="375" height="488"/>
                                 <subviews>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="pUe-47-tWJ">
-                                        <rect key="frame" x="8" y="26" width="359" height="216"/>
+                                    <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="pUe-47-tWJ">
+                                        <rect key="frame" x="12" y="30" width="359" height="216"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="359" id="Jdu-ef-RBt"/>
                                             <constraint firstAttribute="height" constant="216" id="zxc-Qr-EI4"/>
@@ -276,12 +276,25 @@
                                         <date key="date" timeIntervalSinceReferenceDate="487196412.96473801">
                                             <!--2016-06-09 20:20:12 +0000-->
                                         </date>
+                                        <locale key="locale" localeIdentifier="en_US"/>
                                         <connections>
                                             <action selector="dateWheel:" destination="GZo-De-baZ" eventType="valueChanged" id="c0e-wO-iLf"/>
                                         </connections>
                                     </datePicker>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NzG-yT-nx4">
-                                        <rect key="frame" x="289" y="251" width="79" height="30"/>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rhu-F0-Ej5">
+                                        <rect key="frame" x="285" y="292" width="51" height="31"/>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="00:00 A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Twv-8g-dhS">
+                                        <rect key="frame" x="23" y="292" width="144" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="144" id="bJI-9c-KAg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NzG-yT-nx4">
+                                        <rect key="frame" x="284" y="254" width="79" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Af0-pV-qLR"/>
                                             <constraint firstAttribute="width" constant="79" id="taS-LX-KQ0"/>
@@ -291,13 +304,10 @@
                                             <action selector="setAlarm:" destination="GZo-De-baZ" eventType="touchUpInside" id="zO9-23-hN7"/>
                                         </connections>
                                     </button>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rhu-F0-Ej5">
-                                        <rect key="frame" x="281" y="288" width="51" height="31"/>
-                                    </switch>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00 A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Twv-8g-dhS">
-                                        <rect key="frame" x="19" y="288" width="144" height="31"/>
+                                    <label hidden="YES" opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="00:00 A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7aw-Ly-oQs">
+                                        <rect key="frame" x="23" y="396" width="144" height="31"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="144" id="bJI-9c-KAg"/>
+                                            <constraint firstAttribute="width" constant="144" id="Yux-a8-6ql"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>

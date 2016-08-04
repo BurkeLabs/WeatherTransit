@@ -23,7 +23,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    /******** 1 ********/
+    // Create Label
+//    UILabel *myLabel = [[UILabel alloc]initWithFrame:CGRectMake(19, 288, 144, 31)];
+//    [myLabel setBackgroundColor:[UIColor clearColor]];
+//    [myLabel setText:@"00:00 a"];
+//    [[self view] addSubview:myLabel];
+//    [myLabel release];
+
+//    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(23, 331, 144, 31)];
+//    label.text = @"00:00 a";
+//    [label setFont:[UIFont boldSystemFontOfSize:16]];
+//    [self.view addSubview:label];
+
+   /******* 1 *******/
     [self updateClockLabel];
 }
 
@@ -46,7 +58,7 @@
 }
 
 - (IBAction)dateWheel:(id)sender {
-    [self updateAlarmLabel];
+//    [self updateAlarmLabel];
 }
 
 -(void)updateAlarmLabel{
