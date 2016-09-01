@@ -90,6 +90,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B06561681D5927CB008B0140 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B0FD50C61CEE193000E26EAD /* EventKit.framework */,
+				B02421351C3F3CA9002AD3F5 /* WebKit.framework */,
+				B0851D211C2398A800BDF36A /* MapKit.framework */,
+				B0851D1F1C23989E00BDF36A /* CoreLocation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B0783BF41D2BDBD60078E6E0 /* Unused VC */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,10 +113,7 @@
 		B0851CF91C23987400BDF36A = {
 			isa = PBXGroup;
 			children = (
-				B0FD50C61CEE193000E26EAD /* EventKit.framework */,
-				B02421351C3F3CA9002AD3F5 /* WebKit.framework */,
-				B0851D211C2398A800BDF36A /* MapKit.framework */,
-				B0851D1F1C23989E00BDF36A /* CoreLocation.framework */,
+				B06561681D5927CB008B0140 /* Frameworks */,
 				B0851D041C23987400BDF36A /* WeatherTransit */,
 				B0851D031C23987400BDF36A /* Products */,
 			);
@@ -199,6 +207,12 @@
 				TargetAttributes = {
 					B0851D011C23987400BDF36A = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = H5L7XCZENN;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};

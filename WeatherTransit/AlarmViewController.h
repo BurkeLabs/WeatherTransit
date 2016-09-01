@@ -10,11 +10,7 @@
 
 @interface AlarmViewController : UIViewController
 
-/******** 1 ********/
-@property (weak, nonatomic) IBOutlet UILabel *clockLabel;
-
-/******** 2 ********/
 - (IBAction)dateWheel:(id)sender;
--(void)updateClockLabel;
 -(void)updateAlarmLabel;
+
 @end

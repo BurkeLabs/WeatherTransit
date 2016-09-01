@@ -32,8 +32,22 @@
 }
 
 -(void)loadBusStopData{
+    NSMutableArray *busStopArray = [NSMutableArray new];
+    [busStopArray addObjectsFromArray:[BusStopService loadStopsWithRoute:self.busName.route direction:@"Northbound"]];
+    [busStopArray addObjectsFromArray:[BusStopService loadStopsWithRoute:self.busName.route direction:@"Southbound"]];
+    [busStopArray addObjectsFromArray:[BusStopService loadStopsWithRoute:self.busName.route direction:@"Eastbound"]];
+    [busStopArray addObjectsFromArray:[BusStopService loadStopsWithRoute:self.busName.route direction:@"Westbound"]];
+
+    self.busStopArray = busStopArray;
+
     // step 2: move the http req & xml parser to a separate class
-    self.busStopArray = [BusStopService loadStopsWithRoute:self.busName.route direction:@"Eastbound"];
+//    for (NSString *direction in BusStopService) {
+//        [BusStopService appendStopsTo:self.busStopArray route:self.busName.route direction:direction];
+//    }
+//    self.busStopArray = [BusStopService loadStopsWithRoute:self.busName.route direction:@"Eastbound"];
+//    self.busStopArray = [BusStopService loadStopsWithRoute:self.busName.route direction:@"Westbound"];
+//    self.busStopArray = [BusStopService loadStopsWithRoute:self.busName.route direction:@"Northbound"];
+//    self.busStopArray = [BusStopService loadStopsWithRoute:self.busName.route direction:@"Southbound"];
 
     // step 3: load all the directions
     // self.busStopArray = [NSMutableArray new];
