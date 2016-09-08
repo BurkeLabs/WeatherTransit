@@ -30,6 +30,7 @@ typedef enum {
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    NSLog(@"%@ loading with busStopNew = %@", self, self.busStopNew);
     [self loadUpcomingBusData];
 }
 
@@ -39,11 +40,13 @@ typedef enum {
     self.currentField = 0;
 
     BOOL success;
-    NSURL *xmlURL = [NSURL URLWithString:@"http://www.ctabustracker.com/bustime/api/v1/getpredictions?key=Awu5sVzWPUXFske5WVnHMyDgF"];
+    NSString *url = [NSString stringWithFormat:@"http://www.ctabustracker.com/bustime/api/v1/getpredictions?key=Awu5sVzWPUXFske5WVnHMyDgF&stpid=%d", self.busStopNew.stopID];
+    NSURL *xmlURL = [NSURL URLWithString: url];
 
     self.busTimes = [[NSXMLParser alloc] initWithContentsOfURL:xmlURL];
     [self.busTimes setDelegate:self];
     success = [self.busTimes parse];
+    NSLog(@"%@", self.upcomingArray);
 }
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary<NSString *,NSString *> *)attributeDict{

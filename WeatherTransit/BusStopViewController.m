@@ -32,6 +32,9 @@
 }
 
 -(void)loadBusStopData{
+//    for (<#type *object#> in <#collection#>) {
+//        <#statements#>
+//    }
     NSMutableArray *busStopArray = [NSMutableArray new];
     [busStopArray addObjectsFromArray:[BusStopService loadStopsWithRoute:self.busName.route direction:@"Northbound"]];
     [busStopArray addObjectsFromArray:[BusStopService loadStopsWithRoute:self.busName.route direction:@"Southbound"]];
@@ -95,9 +98,16 @@
 
 #pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    UpcomingViewController *upcomingVC = segue.destinationViewController;
-    BusStops *busStopNew = [self.stopArray objectAtIndex:self.stopsTableView.indexPathForSelectedRow.row];
-    upcomingVC.busStopNew = busStopNew;
+    id next  = [[[segue destinationViewController] childViewControllers] objectAtIndex:0];
+    if ([next isKindOfClass:[UpcomingViewController class]])
+    {
+        UpcomingViewController *upcomingVC = next;
+        BusStops *busStopNew = [self.stopArray objectAtIndex:self.stopsTableView.indexPathForSelectedRow.row];
+        NSLog(@"Setting %@.busStopNew = %@", next, busStopNew);
+        upcomingVC.busStopNew = busStopNew;
+    } else {
+        NSLog(@"skip setting bus stop for %@\n", next);
+    }
 }
 
 @end
