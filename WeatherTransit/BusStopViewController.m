@@ -27,8 +27,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.stopSearch.delegate = self;
-//    self.stopsTableView.delegate = self;
+    self.stopsTableView.delegate = self;
     [self loadBusStopData];
+    [self.stopsTableView reloadData];
 }
 
 -(void)loadBusStopData{
@@ -85,8 +86,8 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Stops"];
     BusStops *busStops = [self.stopArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = busStops.direction;
-    cell.detailTextLabel.text = busStops.stopName;
+    cell.textLabel.text = busStops.stopName;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d", busStops.stopID];
     return cell;
 }
 
@@ -95,18 +96,24 @@
     return self.stopArray.count;
 }
 
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+
 
 #pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    [[[segue destinationViewController] viewControllers] objectAtIndex:0];
     id next  = [[[segue destinationViewController] childViewControllers] objectAtIndex:0];
     if ([next isKindOfClass:[UpcomingViewController class]])
     {
         UpcomingViewController *upcomingVC = next;
         BusStops *busStopNew = [self.stopArray objectAtIndex:self.stopsTableView.indexPathForSelectedRow.row];
-        NSLog(@"Setting %@.busStopNew = %@", next, busStopNew);
+//        NSLog(@"Setting %@.busStopNew = %@", next, busStopNew);
         upcomingVC.busStopNew = busStopNew;
-    } else {
-        NSLog(@"skip setting bus stop for %@\n", next);
+//    } else {
+//        NSLog(@"skip setting bus stop for %@\n", next);
     }
 }
 
