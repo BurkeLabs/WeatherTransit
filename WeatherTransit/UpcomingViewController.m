@@ -47,6 +47,7 @@ typedef enum {
     [self.busTimes setDelegate:self];
     success = [self.busTimes parse];
     NSLog(@"%@", self.upcomingArray);
+    [self.upcomingTableView reloadData];
 }
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary<NSString *,NSString *> *)attributeDict{
@@ -136,8 +137,8 @@ typedef enum {
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Upcoming"];
     Upcoming *upcomingBus = [self.upcomingArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = upcomingBus.stopName;
-    cell.detailTextLabel.text = upcomingBus.predictionTime;
+    cell.textLabel.text = upcomingBus.predictionTime;
+//    cell.detailTextLabel.text = upcomingBus.predictionTime;
     return cell;
 }
 

@@ -399,6 +399,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="f3O-fJ-m5q" id="t9w-rj-aKH"/>
+                                    <outlet property="delegate" destination="f3O-fJ-m5q" id="ejb-bV-hbv"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
