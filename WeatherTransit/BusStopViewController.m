@@ -6,6 +6,7 @@
 //  Copyright © 2016 BurkeLabs. All rights reserved.
 //
 
+#import "BusTrackerViewController.h"
 #import "BusStopViewController.h"
 #import "UpcomingViewController.h"
 #import "BusStops.h"
@@ -15,6 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet UISearchBar *stopSearch;
 @property (weak, nonatomic) IBOutlet UITableView *stopsTableView;
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
 
 @property NSArray *busStopArray; // XML
 @property NSMutableArray *busStopSearchArray; //Search Results
@@ -33,9 +35,6 @@
 }
 
 -(void)loadBusStopData{
-//    for (<#type *object#> in <#collection#>) {
-//        <#statements#>
-//    }
     NSMutableArray *busStopArray = [NSMutableArray new];
     [busStopArray addObjectsFromArray:[BusStopService loadStopsWithRoute:self.busName.route direction:@"Northbound"]];
     [busStopArray addObjectsFromArray:[BusStopService loadStopsWithRoute:self.busName.route direction:@"Southbound"]];
@@ -62,6 +61,10 @@
 
     self.stopArray = self.busStopArray;
 }
+
+//- (IBAction)onBackButtonPressed:(id)sender {
+  //  [self.navigationController popViewControllerAnimated:NO];
+//}
 
 #pragma mark - UISearchBarDelegate
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
@@ -104,17 +107,9 @@
 
 #pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    [[[segue destinationViewController] viewControllers] objectAtIndex:0];
-    id next  = [[[segue destinationViewController] childViewControllers] objectAtIndex:0];
-    if ([next isKindOfClass:[UpcomingViewController class]])
-    {
-        UpcomingViewController *upcomingVC = next;
+        UpcomingViewController *upcomingVC = segue.destinationViewController;
         BusStops *busStopNew = [self.stopArray objectAtIndex:self.stopsTableView.indexPathForSelectedRow.row];
-//        NSLog(@"Setting %@.busStopNew = %@", next, busStopNew);
         upcomingVC.busStopNew = busStopNew;
-//    } else {
-//        NSLog(@"skip setting bus stop for %@\n", next);
-    }
 }
 
 @end
