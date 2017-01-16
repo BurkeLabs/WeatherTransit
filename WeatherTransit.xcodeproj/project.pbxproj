@@ -13,6 +13,8 @@
 		B024214A1C49854D002AD3F5 /* BusTrackerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02421491C49854D002AD3F5 /* BusTrackerViewController.m */; };
 		B024214D1C498568002AD3F5 /* CTAStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B024214C1C498568002AD3F5 /* CTAStatusViewController.m */; };
 		B029DB371C9C39CD0016F45A /* Train.m in Sources */ = {isa = PBXBuildFile; fileRef = B029DB361C9C39CD0016F45A /* Train.m */; };
+		B07768E31E0C3D4800EB84A1 /* StatusListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B07768E21E0C3D4800EB84A1 /* StatusListViewController.m */; };
+		B07768E61E0C3F1500EB84A1 /* StatusList.m in Sources */ = {isa = PBXBuildFile; fileRef = B07768E51E0C3F1500EB84A1 /* StatusList.m */; };
 		B0851D071C23987400BDF36A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0851D061C23987400BDF36A /* main.m */; };
 		B0851D0A1C23987400BDF36A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0851D091C23987400BDF36A /* AppDelegate.m */; };
 		B0851D131C23987400BDF36A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0851D111C23987400BDF36A /* Main.storyboard */; };
@@ -44,6 +46,10 @@
 		B024214C1C498568002AD3F5 /* CTAStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTAStatusViewController.m; sourceTree = "<group>"; };
 		B029DB351C9C39CD0016F45A /* Train.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Train.h; sourceTree = "<group>"; };
 		B029DB361C9C39CD0016F45A /* Train.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Train.m; sourceTree = "<group>"; };
+		B07768E11E0C3D4800EB84A1 /* StatusListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusListViewController.h; sourceTree = "<group>"; };
+		B07768E21E0C3D4800EB84A1 /* StatusListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusListViewController.m; sourceTree = "<group>"; };
+		B07768E41E0C3F1500EB84A1 /* StatusList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusList.h; sourceTree = "<group>"; };
+		B07768E51E0C3F1500EB84A1 /* StatusList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusList.m; sourceTree = "<group>"; };
 		B0851D021C23987400BDF36A /* WeatherTransit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherTransit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0851D061C23987400BDF36A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B0851D081C23987400BDF36A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -153,6 +159,10 @@
 				B024214C1C498568002AD3F5 /* CTAStatusViewController.m */,
 				B02421431C487EE6002AD3F5 /* TransitInfo.h */,
 				B02421441C487EE6002AD3F5 /* TransitInfo.m */,
+				B07768E11E0C3D4800EB84A1 /* StatusListViewController.h */,
+				B07768E21E0C3D4800EB84A1 /* StatusListViewController.m */,
+				B07768E41E0C3F1500EB84A1 /* StatusList.h */,
+				B07768E51E0C3F1500EB84A1 /* StatusList.m */,
 				B024213D1C3F48D5002AD3F5 /* WeatherViewController.h */,
 				B024213E1C3F48D5002AD3F5 /* WeatherViewController.m */,
 				B0851D261C38453D00BDF36A /* ECCViewController.h */,
@@ -258,6 +268,8 @@
 				B09869201CDB69F100C7756A /* Upcoming.m in Sources */,
 				B09869171CD2BEE100C7756A /* BusStopViewController.m in Sources */,
 				B098691A1CD2BF5C00C7756A /* UpcomingViewController.m in Sources */,
+				B07768E31E0C3D4800EB84A1 /* StatusListViewController.m in Sources */,
+				B07768E61E0C3F1500EB84A1 /* StatusList.m in Sources */,
 				B0FD50C51CEE183500E26EAD /* AlarmViewController.m in Sources */,
 				B029DB371C9C39CD0016F45A /* Train.m in Sources */,
 				B0851D251C38452800BDF36A /* MainViewController.m in Sources */,
