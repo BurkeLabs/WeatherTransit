@@ -30,6 +30,8 @@
 		B098691D1CDA915200C7756A /* BusStops.m in Sources */ = {isa = PBXBuildFile; fileRef = B098691C1CDA915200C7756A /* BusStops.m */; };
 		B09869201CDB69F100C7756A /* Upcoming.m in Sources */ = {isa = PBXBuildFile; fileRef = B098691F1CDB69F000C7756A /* Upcoming.m */; };
 		B0DDBFFB1D12ED2D00D2CD56 /* BusStopService.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDBFFA1D12ED2D00D2CD56 /* BusStopService.m */; };
+		B0DFFD361E3A661B007E2DE5 /* DisplayStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DFFD351E3A661B007E2DE5 /* DisplayStatusViewController.m */; };
+		B0DFFD391E3A680E007E2DE5 /* DisplayStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DFFD381E3A680E007E2DE5 /* DisplayStatus.m */; };
 		B0FD50C51CEE183500E26EAD /* AlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FD50C41CEE183500E26EAD /* AlarmViewController.m */; };
 		B0FD50C71CEE193000E26EAD /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0FD50C61CEE193000E26EAD /* EventKit.framework */; };
 /* End PBXBuildFile section */
@@ -76,6 +78,10 @@
 		B098691F1CDB69F000C7756A /* Upcoming.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Upcoming.m; sourceTree = "<group>"; };
 		B0DDBFF91D12ED2D00D2CD56 /* BusStopService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusStopService.h; sourceTree = "<group>"; };
 		B0DDBFFA1D12ED2D00D2CD56 /* BusStopService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusStopService.m; sourceTree = "<group>"; };
+		B0DFFD341E3A661B007E2DE5 /* DisplayStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayStatusViewController.h; sourceTree = "<group>"; };
+		B0DFFD351E3A661B007E2DE5 /* DisplayStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayStatusViewController.m; sourceTree = "<group>"; };
+		B0DFFD371E3A680E007E2DE5 /* DisplayStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayStatus.h; sourceTree = "<group>"; };
+		B0DFFD381E3A680E007E2DE5 /* DisplayStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayStatus.m; sourceTree = "<group>"; };
 		B0FD50C31CEE183500E26EAD /* AlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmViewController.h; sourceTree = "<group>"; };
 		B0FD50C41CEE183500E26EAD /* AlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmViewController.m; sourceTree = "<group>"; };
 		B0FD50C61CEE193000E26EAD /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
@@ -163,6 +169,10 @@
 				B07768E21E0C3D4800EB84A1 /* StatusListViewController.m */,
 				B07768E41E0C3F1500EB84A1 /* StatusList.h */,
 				B07768E51E0C3F1500EB84A1 /* StatusList.m */,
+				B0DFFD341E3A661B007E2DE5 /* DisplayStatusViewController.h */,
+				B0DFFD351E3A661B007E2DE5 /* DisplayStatusViewController.m */,
+				B0DFFD371E3A680E007E2DE5 /* DisplayStatus.h */,
+				B0DFFD381E3A680E007E2DE5 /* DisplayStatus.m */,
 				B024213D1C3F48D5002AD3F5 /* WeatherViewController.h */,
 				B024213E1C3F48D5002AD3F5 /* WeatherViewController.m */,
 				B0851D261C38453D00BDF36A /* ECCViewController.h */,
@@ -270,11 +280,13 @@
 				B098691A1CD2BF5C00C7756A /* UpcomingViewController.m in Sources */,
 				B07768E31E0C3D4800EB84A1 /* StatusListViewController.m in Sources */,
 				B07768E61E0C3F1500EB84A1 /* StatusList.m in Sources */,
+				B0DFFD391E3A680E007E2DE5 /* DisplayStatus.m in Sources */,
 				B0FD50C51CEE183500E26EAD /* AlarmViewController.m in Sources */,
 				B029DB371C9C39CD0016F45A /* Train.m in Sources */,
 				B0851D251C38452800BDF36A /* MainViewController.m in Sources */,
 				B09869141CC9361F00C7756A /* BusName.m in Sources */,
 				B024213F1C3F48D5002AD3F5 /* WeatherViewController.m in Sources */,
+				B0DFFD361E3A661B007E2DE5 /* DisplayStatusViewController.m in Sources */,
 				B0851D071C23987400BDF36A /* main.m in Sources */,
 				B0DDBFFB1D12ED2D00D2CD56 /* BusStopService.m in Sources */,
 				B02421451C487EE6002AD3F5 /* TransitInfo.m in Sources */,

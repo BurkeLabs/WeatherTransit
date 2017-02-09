@@ -12,6 +12,9 @@
 
 @interface StatusListViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITableView *statusTableView;
+
 @property StatusList *statusArray;
+@property StatusList *statusList;
 
 @end

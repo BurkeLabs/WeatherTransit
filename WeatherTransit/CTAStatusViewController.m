@@ -8,6 +8,7 @@
 
 #import "CTAStatusViewController.h"
 #import "TransitInfo.h"
+#import "StatusListViewController.h"
 
 @interface CTAStatusViewController () <UITableViewDataSource, UITableViewDelegate, NSXMLParserDelegate, UISearchBarDelegate>
 
@@ -135,14 +136,11 @@ typedef enum {
     }
 }
 
-/*
  #pragma mark - Navigation
-
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    StatusListViewController *statusListVC = segue.destinationViewController;
+    StatusList *statusList = [self.visibleStatus objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+    statusListVC.statusList = statusList;
+}
 
 @end

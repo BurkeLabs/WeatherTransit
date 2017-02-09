@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "StatusList.h"
 
 @interface CTAStatusViewController : UIViewController
+
+@property StatusList *statusList;
+@property StatusList *statusArray;
 
 @end

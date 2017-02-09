@@ -8,12 +8,14 @@
 
 #import "StatusListViewController.h"
 #import "StatusList.h"
+#import "DisplayStatusViewController.h"
 
 @interface StatusListViewController () <UITableViewDelegate, UITableViewDataSource>
 
-@property (weak, nonatomic) IBOutlet UITableView *statusTableView;
+//@property (weak, nonatomic) IBOutlet UITableView *statusTableView;
 
-@property StatusList *statusList;
+
+//@property StatusList *statusList;
 
 @end
 
@@ -22,8 +24,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    NSURL *url = [NSURL URLWithString:@"http://www.transitchicago.com/api/1.0/routes.aspx?routeid=%@&outputType=JSON"];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.transitchicago.com/api/1.0/routes.aspx?routeid=%@&outputType=JSON", self.statusList.ServiceId]];
+    NSLog(@"url: %@", url);
     NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSLog(@"error: %@", error);
+        NSLog(@"data: %@", data);
         NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
         NSDictionary *ctaRoutes = [responseDictionary objectForKey:@"CTARoutes"];
         NSDictionary *routeInfo = [ctaRoutes objectForKey:@"RouteInfo"];
@@ -35,7 +40,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.statusTableView reloadData];
         });
-        }];
+    }];
     [task resume];
 }
 
@@ -55,14 +60,10 @@
     }
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+#pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+    DisplayStatusViewController *displayStatusVC = segue.destinationViewController;
+    }
 
 @end
