@@ -11,7 +11,7 @@
 @implementation DisplayStatus
 
 -(NSString *)description{
-    return [NSString stringWithFormat:@"Headline %@, Short Description %@", _Headline, _ShortDescription];
+    return [NSString stringWithFormat:@"Route %@, Headline %@, Short Description %@", _ServiceId, _Headline, _ShortDescription];
 }
 
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary{

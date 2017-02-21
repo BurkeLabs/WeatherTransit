@@ -22,7 +22,7 @@
 @property NSString *serviceType;
 @property NSString *serviceTypeDescription;
 @property NSString *serviceName;
-@property NSString *serviceID;
+@property NSString *ServiceId;
 @property NSString *serviceBackColor;
 @property NSString *serviceURL;
 
