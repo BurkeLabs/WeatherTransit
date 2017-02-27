@@ -112,11 +112,11 @@
                                         <rect key="frame" x="0.0" y="28" width="383" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a8u-yZ-Z6Y" id="77b-UW-tfj">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xUS-vb-ICu">
-                                                    <rect key="frame" x="15" y="0.0" width="353" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="353" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -185,7 +185,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BG4-ir-vw7" id="fMn-AN-xtm">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -244,7 +244,7 @@
             </objects>
             <point key="canvasLocation" x="-975.20000000000005" y="-70.614692653673174"/>
         </scene>
-        <!--Bus Tracker View Controller-->
+        <!--Bus Route-->
         <scene sceneID="HUq-jD-abM">
             <objects>
                 <viewController id="3PC-wn-rY5" customClass="BusTrackerViewController" sceneMemberID="viewController">
@@ -264,18 +264,18 @@
                                         <rect key="frame" x="0.0" y="28" width="383" height="49"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cRm-6K-Owx" id="cbf-el-os9">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="48"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3bK-S0-Y1q">
-                                                    <rect key="frame" x="15" y="7" width="32" height="20"/>
+                                                    <rect key="frame" x="15" y="8" width="31.5" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Lu8-ph-CnI">
-                                                    <rect key="frame" x="15" y="27" width="31" height="14"/>
+                                                    <rect key="frame" x="15" y="27.5" width="30.5" height="13.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -309,7 +309,7 @@
                             <constraint firstItem="jVn-N8-ekN" firstAttribute="leading" secondItem="htx-OO-jyw" secondAttribute="leadingMargin" constant="-20" id="v6z-qF-l7N"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="yTX-qs-rc6"/>
+                    <navigationItem key="navigationItem" title="Bus Route" id="yTX-qs-rc6"/>
                     <connections>
                         <outlet property="busSearch" destination="jVn-N8-ekN" id="uTY-8w-IVc"/>
                         <outlet property="tableView" destination="bcb-uA-gR2" id="2zp-VO-Qda"/>
@@ -319,7 +319,7 @@
             </objects>
             <point key="canvasLocation" x="-847" y="-786"/>
         </scene>
-        <!--Bus Stop View Controller-->
+        <!--Bus Stop-->
         <scene sceneID="um2-oh-qcA">
             <objects>
                 <viewController id="Lo6-xq-xNH" customClass="BusStopViewController" sceneMemberID="viewController">
@@ -342,18 +342,18 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6ky-Rs-NqU" id="ZGJ-Gz-Rb8">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="52.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9jr-tO-ChU">
-                                                    <rect key="frame" x="15" y="8" width="34" height="21"/>
+                                                    <rect key="frame" x="15" y="9" width="33.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aV1-Qp-Xdq">
-                                                    <rect key="frame" x="15" y="29" width="33" height="15"/>
+                                                    <rect key="frame" x="15" y="29.5" width="33" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -371,8 +371,8 @@
                                     <outlet property="delegate" destination="Lo6-xq-xNH" id="tHV-db-Ll1"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="1qK-Vo-QEc">
-                                <rect key="frame" x="69" y="28" width="306" height="44"/>
+                            <searchBar contentMode="redraw" placeholder="Locate your bus stop" translatesAutoresizingMaskIntoConstraints="NO" id="1qK-Vo-QEc">
+                                <rect key="frame" x="0.0" y="65" width="375" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
@@ -382,11 +382,11 @@
                             <constraint firstItem="jse-V6-XCc" firstAttribute="leading" secondItem="BAr-nY-VWz" secondAttribute="leading" id="AB6-8E-B0V"/>
                             <constraint firstItem="TO4-9g-FsE" firstAttribute="top" secondItem="jse-V6-XCc" secondAttribute="bottom" id="E0e-qt-sDw"/>
                             <constraint firstItem="jse-V6-XCc" firstAttribute="trailing" secondItem="1qK-Vo-QEc" secondAttribute="trailing" id="bnt-9s-Xp9"/>
-                            <constraint firstItem="jse-V6-XCc" firstAttribute="top" secondItem="1qK-Vo-QEc" secondAttribute="bottom" id="gLJ-e5-PsD"/>
-                            <constraint firstItem="jse-V6-XCc" firstAttribute="leading" secondItem="1qK-Vo-QEc" secondAttribute="leading" constant="-69" id="pkt-83-WKd"/>
+                            <constraint firstItem="jse-V6-XCc" firstAttribute="top" secondItem="1qK-Vo-QEc" secondAttribute="bottom" constant="-37" id="gLJ-e5-PsD"/>
+                            <constraint firstItem="jse-V6-XCc" firstAttribute="leading" secondItem="1qK-Vo-QEc" secondAttribute="leading" id="pkt-83-WKd"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ZXZ-gW-lgX"/>
+                    <navigationItem key="navigationItem" title="Bus Stop" id="ZXZ-gW-lgX"/>
                     <connections>
                         <outlet property="stopSearch" destination="1qK-Vo-QEc" id="rmM-7V-9Fg"/>
                         <outlet property="stopsTableView" destination="jse-V6-XCc" id="Vsw-LX-FUv"/>
@@ -394,7 +394,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LBn-bT-Egh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9" y="-786"/>
+            <point key="canvasLocation" x="8.8000000000000007" y="-786.65667166416802"/>
         </scene>
         <!--Upcoming View Controller-->
         <scene sceneID="ECk-EQ-2Cz">
@@ -416,7 +416,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bON-lw-sL1" id="Lfb-vF-Gq1">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
