@@ -25,24 +25,3 @@
 }
 
 @end
-
-/*
- {
- "CTARoutes": {
- "TimeStamp": "2017-01-16T11:03:39",
- "ErrorCode": "0",
- "ErrorMessage": null,
- "RouteInfo": {
- "Route": "Red Line",
- "RouteColorCode": "c60c30",
- "RouteTextColor": "ffffff",
- "ServiceId": "Red",
- "RouteURL": {
- "#cdata-section": "http://www.transitchicago.com/riding_cta/systemguide/redline.aspx"
- },
- "RouteStatus": "Planned Work",
- "RouteStatusColor": "06c"
- }
- }
- }
-*/

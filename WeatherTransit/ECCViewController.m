@@ -8,7 +8,6 @@
 
 #import "ECCViewController.h"
 #import <WebKit/WebKit.h>
-#import <WebKit/WebKit.h>
 //#import "Navigation.h"
 
 @interface ECCViewController () <UITabBarDelegate, UIWebViewDelegate, UIScrollViewDelegate>

@@ -8,7 +8,6 @@
 
 #import "AlarmViewController.h"
 #import <EventKit/EventKit.h>
-#import <PushKit/PushKit.h>
 
 @interface AlarmViewController ()
 
