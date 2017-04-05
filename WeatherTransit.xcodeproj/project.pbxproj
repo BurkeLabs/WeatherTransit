@@ -12,6 +12,7 @@
 		B02421451C487EE6002AD3F5 /* TransitInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B02421441C487EE6002AD3F5 /* TransitInfo.m */; };
 		B024214A1C49854D002AD3F5 /* BusTrackerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02421491C49854D002AD3F5 /* BusTrackerViewController.m */; };
 		B024214D1C498568002AD3F5 /* CTAStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B024214C1C498568002AD3F5 /* CTAStatusViewController.m */; };
+		B02909411E6F85070015AE90 /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02909401E6F85070015AE90 /* FavoritesViewController.m */; };
 		B029DB371C9C39CD0016F45A /* Train.m in Sources */ = {isa = PBXBuildFile; fileRef = B029DB361C9C39CD0016F45A /* Train.m */; };
 		B07768E31E0C3D4800EB84A1 /* StatusListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B07768E21E0C3D4800EB84A1 /* StatusListViewController.m */; };
 		B07768E61E0C3F1500EB84A1 /* StatusList.m in Sources */ = {isa = PBXBuildFile; fileRef = B07768E51E0C3F1500EB84A1 /* StatusList.m */; };
@@ -44,6 +45,8 @@
 		B02421491C49854D002AD3F5 /* BusTrackerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusTrackerViewController.m; sourceTree = "<group>"; };
 		B024214B1C498568002AD3F5 /* CTAStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTAStatusViewController.h; sourceTree = "<group>"; };
 		B024214C1C498568002AD3F5 /* CTAStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTAStatusViewController.m; sourceTree = "<group>"; };
+		B029093F1E6F85070015AE90 /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesViewController.h; sourceTree = "<group>"; };
+		B02909401E6F85070015AE90 /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesViewController.m; sourceTree = "<group>"; };
 		B029DB351C9C39CD0016F45A /* Train.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Train.h; sourceTree = "<group>"; };
 		B029DB361C9C39CD0016F45A /* Train.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Train.m; sourceTree = "<group>"; };
 		B07768E11E0C3D4800EB84A1 /* StatusListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusListViewController.h; sourceTree = "<group>"; };
@@ -96,6 +99,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B063C3741E8038110019A96C /* Bus Route VC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Bus Route VC";
+			sourceTree = "<group>";
+		};
+		B063C3751E80381D0019A96C /* CTA Status VC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CTA Status VC";
+			sourceTree = "<group>";
+		};
+		B063C3761E8038290019A96C /* Weather VC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Weather VC";
+			sourceTree = "<group>";
+		};
+		B063C3771E8038310019A96C /* ECC VC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "ECC VC";
+			sourceTree = "<group>";
+		};
 		B06561681D5927CB008B0140 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,9 +166,15 @@
 		B0851D041C23987400BDF36A /* WeatherTransit */ = {
 			isa = PBXGroup;
 			children = (
+				B063C3771E8038310019A96C /* ECC VC */,
+				B063C3761E8038290019A96C /* Weather VC */,
+				B063C3751E80381D0019A96C /* CTA Status VC */,
+				B063C3741E8038110019A96C /* Bus Route VC */,
 				B0851D111C23987400BDF36A /* Main.storyboard */,
 				B029DB351C9C39CD0016F45A /* Train.h */,
 				B029DB361C9C39CD0016F45A /* Train.m */,
+				B029093F1E6F85070015AE90 /* FavoritesViewController.h */,
+				B02909401E6F85070015AE90 /* FavoritesViewController.m */,
 				B02421481C49854D002AD3F5 /* BusTrackerViewController.h */,
 				B02421491C49854D002AD3F5 /* BusTrackerViewController.m */,
 				B09869121CC9361E00C7756A /* BusName.h */,
@@ -274,6 +311,7 @@
 				B07768E61E0C3F1500EB84A1 /* StatusList.m in Sources */,
 				B0DFFD391E3A680E007E2DE5 /* DisplayStatus.m in Sources */,
 				B029DB371C9C39CD0016F45A /* Train.m in Sources */,
+				B02909411E6F85070015AE90 /* FavoritesViewController.m in Sources */,
 				B0851D251C38452800BDF36A /* MainViewController.m in Sources */,
 				B09869141CC9361F00C7756A /* BusName.m in Sources */,
 				B024213F1C3F48D5002AD3F5 /* WeatherViewController.m in Sources */,

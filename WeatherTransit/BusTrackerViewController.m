@@ -7,8 +7,9 @@
 //  Awu5sVzWPUXFske5WVnHMyDgF
 
 #import "BusTrackerViewController.h"
-#import "BusStopViewController.h"
+#import "FavoritesViewController.h"
 #import "BusName.h"
+
 
 @interface BusTrackerViewController () <UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource, NSXMLParserDelegate>
 
@@ -128,11 +129,31 @@ typedef enum {
     return self.activeArray.count;
 }
 
+#pragma mark - Favorite Bus Route
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    id<BusTrackerViewControllerDelegate> strongDelegate = self.delegate;
+    BusName *selectedBusName = [self.activeArray objectAtIndex:indexPath.row];
+    [strongDelegate busTrackerViewController:self didChooseValue:selectedBusName];
+    //        [self.tableView reloadRowsAtIndexPaths:indexPath.row withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)addBusToFavorite:(id)sender{
+//    if ([strongDelegate respondsToSelector:@selector(busTrackerViewController:didChooseValue:)]) {
+}
+
+- (void)unwindForSegue:(UIStoryboardSegue *)unwindSegue{
+    FavoritesViewController *favorite = unwindSegue.sourceViewController;
+    if (self.activeArray != favorite.addedBus) {
+        self.activeArray = favorite.addedBus;
+    }
+}
+
 #pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    BusStopViewController *busStopVC = segue.destinationViewController;
+    FavoritesViewController *favoritesVC = segue.destinationViewController;
     BusName *busName = [self.activeArray objectAtIndex:self.tableView.indexPathForSelectedRow.row];
-    busStopVC.busName = busName;
+    favoritesVC.busName = busName;
 }
 
 @end

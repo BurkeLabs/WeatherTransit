@@ -26,7 +26,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.spinner hidesWhenStopped];
+
+    self.spinner.hidesWhenStopped = YES;
     [self openURL:@"http://www.emergencyclosingcenter.com"];
 }
 
