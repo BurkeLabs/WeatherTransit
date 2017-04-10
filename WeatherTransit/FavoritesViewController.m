@@ -8,6 +8,7 @@
 
 #import "FavoritesViewController.h"
 #import "BusTrackerViewController.h"
+#import "BusStopViewController.h"
 
 @interface FavoritesViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -35,7 +36,7 @@
 
 #pragma mark - UITableViewDataSource and UITableViewDelegate
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"busTracker"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"favorite"];
     BusName *busName = [self.favorited objectAtIndex:indexPath.row];
     cell.textLabel.text = busName.route;
     cell.detailTextLabel.text = busName.routeName;
@@ -52,10 +53,10 @@
 }
 
 #pragma mark - Navigation
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    BusStopViewController *busStopVC = segue.destinationViewController;
-//    BusName *busName = [self.favorited objectAtIndex:self.tableView.indexPathForSelectedRow.row];
-//    busStopVC.busName = busName;
-//}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    BusStopViewController *busStopVC = segue.destinationViewController;
+    BusName *busName = [self.favorited objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+    busStopVC.busName = busName;
+}
 
 @end

@@ -138,9 +138,9 @@ typedef enum {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(void)addBusToFavorite:(id)sender{
+//-(void)addBusToFavorite:(id)sender{
 //    if ([strongDelegate respondsToSelector:@selector(busTrackerViewController:didChooseValue:)]) {
-}
+//}
 
 - (void)unwindForSegue:(UIStoryboardSegue *)unwindSegue{
     FavoritesViewController *favorite = unwindSegue.sourceViewController;
